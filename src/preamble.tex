@@ -6,7 +6,7 @@
 %  It will be read in by texi-to-latex.pl.  %
 %===========================================%
 
-\documentclass[11pt,oneside]{book}
+\documentclass[11pt,twoside]{book}
 
 % New line height: 1.05 * 1.2 = 1.26
 \renewcommand{\baselinestretch}{1.05}
@@ -65,12 +65,26 @@
 \usepackage[final]{pdfpages} % inserts pages from a pdf file
 
 % Page geometry for 10-inch tablets:
-\usepackage[papersize={148mm,197mm},
-            top=21mm,
-            textwidth=111mm,  % increase one or both of these by 1mm or so to
-            textheight=148mm, % make the source compile with TeX Live 2013
-            hcentering,       % if you get "Too many unprocessed floats" error
+% \usepackage[papersize={148mm,197mm},
+%             top=21mm,
+%             textwidth=111mm,  % increase one or both of these by 1mm or so to
+%             textheight=148mm, % make the source compile with TeX Live 2013
+%             hcentering,       % if you get "Too many unprocessed floats" error
+% ]{geometry}
+\usepackage[papersize={152mm,229mm},
+            top=18mm,
+            textwidth=126mm,  % increase one or both of these by 1mm or so to
+            textheight=190mm, % make the source compile with TeX Live 2013
+%            hcentering,       % if you get "Too many unprocessed floats" error
 ]{geometry}
+
+\setlength{\marginparwidth}{15mm}
+\let\tmp\oddsidemargin
+\let\oddsidemargin\evensidemargin
+\let\evensidemargin\tmp
+\reversemarginpar
+
+% \setlength{\oddsidemargin}{4mm}
 
 \usepackage{titlesec}  % to change the appearance of section titles
 \usepackage{listings}  % for syntax highlighted code listings
